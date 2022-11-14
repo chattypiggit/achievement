@@ -6,9 +6,28 @@
     tools:context=".tab2">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="TAB 2" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        style = "@style/egg_icon"
+        android:id="@+id/egg_img1"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="5dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        style = "@style/egg_icon"
+        android:id="@+id/egg_img2"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="210dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        style = "@style/egg_icon"
+        android:id="@+id/egg_img3"
+        android:layout_marginTop="375dp"
+        android:layout_marginStart="5dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        style = "@style/egg_icon"
+        android:id="@+id/egg_img4"
+        android:layout_marginTop="375dp"
+        android:layout_marginStart="210dp" />
 
 </FrameLayout>
