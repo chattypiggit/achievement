@@ -3,7 +3,9 @@
     <item
         android:id="@+id/tab1"
         android:title="tab1"
-        android:icon="@drawable/circle" />
+        android:icon="@drawable/circle"
+        android:layout_height="30dp"
+        android:layout_width="30dp"/>
 
     <item
         android:id="@+id/tab2"
