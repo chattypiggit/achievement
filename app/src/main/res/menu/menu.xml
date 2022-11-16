@@ -18,14 +18,4 @@
         android:icon="@drawable/circle"/>
 
 
-    <item
-        android:id="@+id/tab4"
-        android:title="tab4"
-        android:icon="@drawable/circle"/>
-
-    <item
-        android:id="@+id/tab5"
-        android:title="tab5"
-        android:icon="@drawable/circle"/>
-
 </menu>
