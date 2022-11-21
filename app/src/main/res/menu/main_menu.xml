@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/account"
-        android:title="계정정보" />
+        android:title="환경설정" />
     <item
         android:id="@+id/logout"
-        android:title="로그아웃" />
+        android:title="업적" />
 </menu>
