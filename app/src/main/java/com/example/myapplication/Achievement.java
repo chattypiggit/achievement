@@ -11,13 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class tab1 extends Fragment {
+public class Achievement extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_tab1, container, false);
+        View view = inflater.inflate(R.layout.fragment_achv, container, false);
 
         //변수에 의한 텍스트와 이미지 제어
         ImageView imageView = (ImageView) view.findViewById(R.id.ach_img1);

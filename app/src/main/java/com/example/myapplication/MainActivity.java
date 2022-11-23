@@ -5,7 +5,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,9 +12,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -52,16 +49,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.settings:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.home_ly, new Settings())
+                        .commit();
+                return true;
+            case R.id.achievement:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.home_ly, new Achievement())
+                        .commit();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "개발새발(https://jeong9216.tistory.com/) 블로그 좋아요!");
 
         init(); //객체 정의
         SettingListener(); //리스너 등록
 
         //맨 처음 시작할 탭 설정
-        bottomNavigationView.setSelectedItemId(R.id.tab1);
+        bottomNavigationView.setSelectedItemId(R.id.tab2);
     }
 
     private void init() {
@@ -80,13 +93,19 @@ public class MainActivity extends AppCompatActivity {
             switch (menuItem.getItemId()) {
                 case R.id.tab1: {
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.home_ly, new tab1())
+                            .replace(R.id.home_ly, new PetShop())
                             .commit();
                     return true;
                 }
                 case R.id.tab2: {
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.home_ly, new tab2())
+                            .replace(R.id.home_ly, new Calender())
+                            .commit();
+                    return true;
+                }
+                case R.id.tab3: {
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.home_ly, new PetBook())
                             .commit();
                     return true;
                 }
