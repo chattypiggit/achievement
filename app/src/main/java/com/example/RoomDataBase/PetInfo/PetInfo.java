@@ -1,5 +1,6 @@
-package com.example.RoomDataBase;
+package com.example.RoomDataBase.PetInfo;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,9 +8,9 @@ import androidx.room.PrimaryKey;
 @Entity
 public class PetInfo {
 
-    @PrimaryKey(autoGenerate = true)
-    public int idx;
 
+    @NonNull
+    @PrimaryKey(autoGenerate = false)
     @ColumnInfo(name = "name")
     public String name;
 
