@@ -2,6 +2,10 @@ package com.example.myapplication;
 
 import static org.junit.Assert.assertEquals;
 
+import android.content.res.AssetManager;
+
+import com.example.csv.CSVReader;
+
 import org.junit.Test;
 
 /**
@@ -12,6 +16,8 @@ import org.junit.Test;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+
+        CSVReader a = new CSVReader();
+
     }
 }
