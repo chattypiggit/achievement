@@ -1,33 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PetBook">
+    android:layout_row="3">
 
-    <!-- TODO: Update blank fragment layout -->
-    <de.hdodenhof.circleimageview.CircleImageView
-        style = "@style/egg_icon"
-        android:id="@+id/egg_img1"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="5dp" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        style = "@style/egg_icon"
-        android:id="@+id/egg_img2"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="210dp"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+    </TableRow>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        style = "@style/egg_icon"
-        android:id="@+id/egg_img3"
-        android:layout_marginTop="375dp"
-        android:layout_marginStart="5dp"/>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        style = "@style/egg_icon"
-        android:id="@+id/egg_img4"
-        android:layout_marginTop="375dp"
-        android:layout_marginStart="210dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-</FrameLayout>
+            <ImageView
+                android:id="@+id/petImage_1_1"
+                android:layout_width="match_parent"
+                android:layout_height="91dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="@string/petImage"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/pet_1_1"
+                tools:srcCompat="@drawable/pet_1_1" />
+
+            <TextView
+                android:id="@+id/textView_1_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/petName_1_1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/petImage_1_2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="@string/petImage"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/pet_1_2"
+                tools:srcCompat="@drawable/pet_1_2" />
+
+            <TextView
+                android:id="@+id/textView_1_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/petName_1_2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/petImage_1_3"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="@string/petImage"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/pet_1_3"
+                tools:srcCompat="@drawable/pet_1_3" />
+
+            <TextView
+                android:id="@+id/textView_1_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/petName_1_3" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/petImage_2_1"
+                android:layout_width="match_parent"
+                android:layout_height="117dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="@string/petImage"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/pet_2_1"
+                tools:srcCompat="@drawable/pet_2_1" />
+
+            <TextView
+                android:id="@+id/textView_2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/petName_2_1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/petImage_2_2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="@string/petImage"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/pet_2_2"
+                tools:srcCompat="@drawable/pet_2_2" />
+
+            <TextView
+                android:id="@+id/textView_2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/petName_2_2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/petImage_2_3"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:contentDescription="@string/petImage"
+                android:onClick="onClick"
+                app:srcCompat="@drawable/pet_2_3"
+                tools:srcCompat="@drawable/pet_2_3" />
+
+            <TextView
+                android:id="@+id/textView_2_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/petName_2_3" />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+    </TableRow>
+</TableLayout>
