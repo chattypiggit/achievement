@@ -1,6 +1,9 @@
 package com.example.csv.factor;
 
 public class PetInfoCsvFactor {
+    /**
+     * id인덱스
+     */
     public int idx = -1;
     public String name = "";
     public int progress = -1;

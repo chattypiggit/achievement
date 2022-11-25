@@ -1,12 +1,12 @@
 package com.example.csv.factor;
 
-public class AchievementCSVFactor {
+public class AchievementCsvFactor {
     public int idx = -1;
     public String name ="";
     public String flavor_text ="";
     public String img_path ="";
 
-    public AchievementCSVFactor(String[] temp) {
+    public AchievementCsvFactor(String[] temp) {
         if (temp[0] != null) {
             idx = Integer.parseInt(temp[0]);
         }
