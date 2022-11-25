@@ -2,28 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/tab1"
-        android:title="tab1"
-        android:icon="@drawable/circle" />
+        android:title="펫 상점"
+        android:icon="@drawable/circle"
+        android:layout_height="30dp"
+        android:layout_width="30dp"/>
 
     <item
         android:id="@+id/tab2"
-        android:title="tab2"
+        android:title="메인"
         android:icon="@drawable/circle"/>
 
     <item
         android:id="@+id/tab3"
-        android:title="tab3"
+        android:title="펫 도감"
         android:icon="@drawable/circle"/>
 
-
-    <item
-        android:id="@+id/tab4"
-        android:title="tab4"
-        android:icon="@drawable/circle"/>
-
-    <item
-        android:id="@+id/tab5"
-        android:title="tab5"
-        android:icon="@drawable/circle"/>
 
 </menu>
