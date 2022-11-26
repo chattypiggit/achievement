@@ -11,6 +11,7 @@ import androidx.room.Update;
 
 import com.example.RoomDataBase.PetInfo.PetCheckInfo;
 
+import java.util.Date;
 import java.util.List;
 
 @Dao
@@ -23,6 +24,10 @@ public interface ToDoDao {
 
     @Query("SELECT * FROM ToDoList")
     List<ToDoList> get();
+
+    @Query("SELECT * FROM ToDoList where date=:date")
+    List<ToDoList> getByDate(String date);
+
 
     @Query("SELECT * FROM ToDoList WHERE idx = :idx")
     ToDoList getByIdx(int idx);

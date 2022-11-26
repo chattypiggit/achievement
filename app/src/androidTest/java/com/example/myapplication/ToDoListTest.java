@@ -16,6 +16,7 @@ import org.junit.runner.RunWith;
 
 import java.text.ParseException;
 import java.util.Date;
+import java.util.List;
 
 @RunWith(AndroidJUnit4.class)
 public class ToDoListTest {
@@ -25,9 +26,14 @@ public class ToDoListTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         ToDoListDataBase todoList = ToDoListDataBase.getAppDatabase(appContext);
         //일정을 추가한다.
-        ToDoList newToDo = new ToDoList("시러","2022-05-05");
+        ToDoList newToDo = new ToDoList("시러","20220505");
+
+
         todoList.toDoDao().insert(newToDo);
-        
+
+        for(ToDoList q : todoList.toDoDao().get()){
+            Log.v("asdf",q.toString());
+        }
         //todoList.toDoDao().get(int idx) 특정 일정 가져오기
         //todoList.toDoDao().get()전체 가져오기
 
