@@ -273,13 +273,6 @@ public class Calender extends Fragment {
                                             //Event 숫자 호출과 판정
                                             List<Event> cntEvents = compactCalendarView.getEvents(dateClicked);
 
-                                            if (cntEvents.size() == 1) {
-
-
-                                            //Event 숫자 호출과 판정
-                                            List<Event> cntEvents = compactCalendarView.getEvents(dateClicked);
-
-
                                             if (cntEvents.size() == 0) {
                                                 textView_tmpList1.setText(editText.getText().toString());
                                             }
