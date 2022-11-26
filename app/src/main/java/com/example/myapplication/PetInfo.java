@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -32,12 +33,16 @@ public class PetInfo extends Fragment {
             petInfoCsv = (new PetInfoCSV()).getPetInfo(context);
             if(getArguments()!=null) {
                 ImageView petImage = view.findViewById(R.id.petImage);
+                ProgressBar progressBar = view.findViewById((R.id.progressBar));
                 TextView petName = view.findViewById(R.id.petName);
                 TextView petInfo = view.findViewById(R.id.petInfo);
+
                 int index = getArguments().getInt("INDEX", 1)-1;
                 PetInfoCsvFactor petInfoContainer = petInfoCsv.get(index);
                 int petImageId = this.getResources().getIdentifier(petInfoContainer.img_dir, "drawable", context.getPackageName());
+
                 petImage.setImageResource(petImageId);
+                progressBar.setMax(petInfoContainer.max_exp);
                 petName.setText(petInfoContainer.name);
                 petInfo.setText(petInfoContainer.flavor_text.replace("<br>","\n"));
             }
