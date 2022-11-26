@@ -1,9 +1,13 @@
 package com.example.RoomDataBase.ToDoList;
 
+import android.annotation.SuppressLint;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -11,42 +15,31 @@ public class ToDoList {
     @PrimaryKey(autoGenerate = true)
     public int idx;
 
-    @ColumnInfo(name = "start_date")
-    public Date start_date;
-
-    @ColumnInfo(name = "end_date")
-    public Date end_date;
-
-    @ColumnInfo(name = "title")
-    public String title;
-
     @ColumnInfo(name = "content")
     public String content;
 
+    @ColumnInfo(name = "date")
+    public Date date;
 
 
-    public ToDoList(String title, String content, Date start_date,Date end_date){
+
+    public ToDoList(String content, String dateText) throws ParseException {
         this.content =content;
-        this.title = title;
-        this.start_date = start_date;
-        this.end_date = end_date;
+        String DEFAULT_PATTERN = "yyyy-MM-dd";
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat format = new SimpleDateFormat(DEFAULT_PATTERN);
+        this.date = format.parse(dateText);
     }
 
-    public ToDoList(String title, String content, Date start_date,Date end_date, int idx){
-        this.content =content;
-        this.title = title;
-        this.start_date = start_date;
-        this.end_date = end_date;
-        this.idx = idx;
+    public ToDoList(String content, Date date){
+        this.content = content;
+        this.date = date;
     }
 
     @Override
     public String toString() {
         return "ToDoList{" +
                 "idx=" + idx +
-                ", start_date=" + start_date +
-                ", end_date=" + end_date +
-                ", title='" + title + '\'' +
+                ", date=" + date +
                 ", content='" + content + '\'' +
                 '}';
     }

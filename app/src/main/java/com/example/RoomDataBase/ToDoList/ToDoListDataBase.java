@@ -11,7 +11,7 @@ import com.example.RoomDataBase.PetInfo.PetCheckDao;
 import com.example.RoomDataBase.PetInfo.PetCheckDataBase;
 import com.example.RoomDataBase.PetInfo.PetCheckInfo;
 
-@Database(entities = {ToDoList.class}, version =  1, exportSchema = false)
+@Database(entities = {ToDoList.class}, version =  2, exportSchema = false)
 @TypeConverters({TimeConverter.class})
 public abstract class ToDoListDataBase extends RoomDatabase {
     private static ToDoListDataBase Instance;
