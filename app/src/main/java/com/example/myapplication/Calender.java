@@ -273,7 +273,8 @@ public class Calender extends Fragment {
                                             //Event 숫자 호출과 판정
                                             List<Event> cntEvents = compactCalendarView.getEvents(dateClicked);
 
-                                            if (cntEvents.size() == 0) {
+
+                                            if (cntEvents.size() == 1) {
                                                 textView_tmpList1.setText(editText.getText().toString());
                                             }
                                             else if (cntEvents.size() == 2) {
@@ -281,7 +282,8 @@ public class Calender extends Fragment {
 
                                             } else if (cntEvents.size() == 3) {
                                                 textView_tmpList3.setText(editText.getText().toString());
-                                            } else {
+                                            }
+                                            else {
                                                 Toast.makeText(getActivity(), "일정이 꽉 찼습니다", Toast.LENGTH_SHORT).show();
                                                 return;
                                             }
