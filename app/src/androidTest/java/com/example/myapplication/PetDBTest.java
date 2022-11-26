@@ -29,6 +29,12 @@ public class PetDBTest {
         PetCheckInfo a = new PetCheckInfo(0, true);
         //데이터 집어넣기
         db.petInfoDao().insert(a);
+
+        PetCheckInfo newPet = db.petInfoDao().getByIdx(0);
+        newPet.current_exp = 20;
+        db.petInfoDao().update(newPet);
+        for(PetCheckInfo o : db.petInfoDao().get()){
+        }
         
     }
 }

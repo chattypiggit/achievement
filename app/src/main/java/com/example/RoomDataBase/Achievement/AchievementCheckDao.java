@@ -22,6 +22,6 @@ public interface AchievementCheckDao {
     @Query("SELECT * FROM AchievementCheck")
     List<AchievementCheck> get();
     @Query("SELECT * FROM AchievementCheck WHERE idx = :idx")
-    AchievementCheck get(int idx);
+    AchievementCheck getByIdx(int idx);
 
 }

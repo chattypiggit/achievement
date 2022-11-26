@@ -32,7 +32,9 @@ public class ToDoListTest {
         //todoList.toDoDao().get()전체 가져오기
 
 
-        Log.v("asdf",todoList.toDoDao().get(1).date.toString());
+        ToDoList newInfo = todoList.toDoDao().getByIdx(1);
+        newInfo.content = "ㅁㄴㅇㄹ";
+        todoList.toDoDao().update(newInfo);
         //todoList.toDoDao().delete(oldToDo) 하면 지워짐
         //또는 todoList.toDoDao().delete(int idx)도 가능
         for(ToDoList asdf : todoList.toDoDao().get()){

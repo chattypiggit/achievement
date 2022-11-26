@@ -25,10 +25,10 @@ public interface ToDoDao {
     List<ToDoList> get();
 
     @Query("SELECT * FROM ToDoList WHERE idx = :idx")
-    ToDoList get(int idx);
+    ToDoList getByIdx(int idx);
 
     @Query("Delete from ToDoList WHERE idx = :idx")
-    void delete(int idx);
+    void deleteByIdx(int idx);
     @Delete
     void delete(ToDoList toDoList);
 }

@@ -14,6 +14,8 @@ public class AchievementCheck {
     @ColumnInfo(name = "is_acquired")
     public boolean is_acquired;
 
+
+
     public AchievementCheck(int idx, boolean is_acquired) {
         this.idx = idx;
         this.is_acquired = is_acquired;
