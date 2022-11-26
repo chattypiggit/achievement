@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -58,6 +60,7 @@ public class Calender extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        //((MainActivity)getActivity()).setActionBarTitle("캘린더");
         return inflater.inflate(R.layout.fragment_cal, container, false);
     }
 
@@ -290,6 +293,8 @@ public class Calender extends Fragment {
 
             }
         });
+
+
     }
 }
 

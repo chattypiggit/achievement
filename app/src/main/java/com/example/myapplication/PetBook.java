@@ -16,6 +16,7 @@ public class PetBook extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_pbook, container, false);
+       ((MainActivity)getActivity()).setActionBarTitle("펫 도감");
 
         view.findViewById(R.id.petImage_1_1).setOnClickListener(this);
         view.findViewById(R.id.petImage_1_2).setOnClickListener(this);

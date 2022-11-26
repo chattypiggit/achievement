@@ -6,12 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -109,8 +111,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
+    public void setActionBarTitle(String title){
+        TextView tit = (TextView) findViewById(R.id.title);
+        tit.setText(title);
+    }
 
 }
 

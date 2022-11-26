@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Credits"
+    android:background="@color/black">
+
+    <TextView
+        style="@style/ach_txt"
+        android:id="@+id/creator1"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:text="팀장 : 2018203021 유호준"
+        android:textSize="30dp"
+        />
+    <TextView
+        style="@style/ach_txt"
+        android:id="@+id/creator2"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="200dp"
+        android:text="팀원 : 2018203069 박수연"
+        android:textSize="30dp"
+        />
+    <TextView
+        style="@style/ach_txt"
+        android:id="@+id/creator3"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="300dp"
+        android:text="팀원 : 2019203109 최지민"
+        android:textSize="30dp"
+        />
+    <TextView
+        style="@style/ach_txt"
+        android:id="@+id/creator4"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="400dp"
+        android:text="팀원 : 2019706083 정영은"
+        android:textSize="30dp"
+        />
+</FrameLayout>
