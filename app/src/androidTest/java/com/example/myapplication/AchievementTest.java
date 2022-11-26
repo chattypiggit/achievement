@@ -31,7 +31,7 @@ public class AchievementTest { //csv 파일 읽기
         PetInfoCSV a = new PetInfoCSV();
         List<PetInfoCsvFactor> b = a.getPetInfo(appContext);
         for(PetInfoCsvFactor i : b){
-            Log.v("asdf", i.flavor_text);
+            Log.v("asdf", i.name);
         }
         AchievementCSV asdf = new AchievementCSV();
         List<AchievementCsvFactor> asd = asdf.getAchievement(appContext);
