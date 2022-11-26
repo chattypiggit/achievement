@@ -86,8 +86,6 @@ public class Calender extends Fragment {
             @Override
             public void onDayClick(Date dateClicked) {
                 List<Event> events = compactCalendarView.getEvents(dateClicked);
-
-                //날짜 호출시 내용 표시
                 if(events.size() == 1){
                     textView_tmpList1.setText(events.get(0).getData().toString());
                     textView_tmpList2.setText("Empty");
@@ -262,12 +260,21 @@ public class Calender extends Fragment {
                                             Event ev1 = new Event(Color.GREEN, currentLong, editText.getText().toString());
                                             compactCalendarView.addEvent(ev1);
 
+
+                                            //Event 숫자 호출과 판정
+                                            List<Event> cntEvents = compactCalendarView.getEvents(dateClicked);
+
+
                                             if (cntEvents.size() == 0) {
                                                 textView_tmpList1.setText(editText.getText().toString());
                                             } else if (cntEvents.size() == 2) {
                                                 textView_tmpList2.setText(editText.getText().toString());
-                                            } else{
+
+                                            } else if (cntEvents.size() == 3) {
                                                 textView_tmpList3.setText(editText.getText().toString());
+                                            } else {
+                                                Toast.makeText(getActivity(), "일정이 꽉 찼습니다", Toast.LENGTH_SHORT).show();
+                                                return;
                                             }
 
                                             Toast.makeText(getActivity(), "일정이 저장되었습니다.", Toast.LENGTH_SHORT).show();
