@@ -2,4 +2,39 @@
     <string name="app_name">My Application</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="back">뒤로가기</string>
+
+    <string name="petName">펫 이름</string>
+    <string name="petImage">펫 이미지</string>
+    <string name="petNextLvlExp">성장까지…</string>
+    <string name="petInfo">플레이버 텍스트\n여기에 펫의 설명이 포함됩니다\n샘플 내용</string>
+
+    <string name="petSelectPartner">파트너로 설정</string>
+
+    <string name="petName_1_1">다람</string>
+    <string name="petInfo_1_1">동글동글한 기분의 아기 다람쥐\n오늘도 도토리 생각에 싱글벙글!</string>
+
+    <string name="petName_1_2">람지</string>
+    <string name="petInfo_1_2">쑥쑥 성장중인 다람쥐\n이제는 꼬리도 더 커졌어</string>
+
+    <string name="petName_1_3">복슬다람</string>
+    <string name="petInfo_1_3">이제는 어른이라고 불러줘요!\n빵빵한 볼주머니 안에는 도토리가 가득</string>
+
+    <string name="petName_2_1">캥캥</string>
+    <string name="petInfo_2_1">동글동글한 기분의 아기 여우\n따뜻한 햇볕 아래서 자는 낮잠이 좋아</string>
+
+    <string name="petName_2_2">콩콩</string>
+    <string name="petInfo_2_2">쑥쑥 성장중인 여우\n또래 동물 친구들과 장난치는게 제일 즐거워</string>
+
+    <string name="petName_2_3">캬우</string>
+    <string name="petInfo_2_3">나도 이젠 다 컸다구요!\n복슬복슬한 꼬리는 캬우의 최고의 자랑</string>
+
+    <string name="achievementName">업적 이름</string>
+    <string name="achievementImage">업적 이미지</string>
+    <string name="achievementInfo">플레이버 텍스트\n여기에 업적의 설명이 포함됩니다\n고양이는 야옹</string>
+    <string name="achievementDate">달성 날짜</string>
+
+    <string name="team">말 많은 돼지들의 고향</string>
+    <string name="credit">2018203021 유호준\n2018203069 박수연\n2019203019 최지민\n2019706083 정영은</string>
 </resources>
