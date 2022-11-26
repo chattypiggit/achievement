@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -51,14 +50,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.settings:
+            case R.id.credits:
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.home_ly, new Settings())
-                        .commit();
-                return true;
-            case R.id.achievement:
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.home_ly, new Achievement())
+                        .replace(R.id.home_ly, new Credits())
                         .commit();
                 return true;
         }
@@ -93,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             switch (menuItem.getItemId()) {
                 case R.id.tab1: {
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.home_ly, new PetShop())
+                            .replace(R.id.home_ly, new Achievement())
                             .commit();
                     return true;
                 }

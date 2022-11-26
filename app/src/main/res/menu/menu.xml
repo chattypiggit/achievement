@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/tab1"
-        android:title="펫 상점"
+        android:title="업적"
         android:icon="@drawable/circle"
         android:layout_height="30dp"
         android:layout_width="30dp"/>
