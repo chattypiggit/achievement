@@ -39,7 +39,7 @@ public class PetInfo extends Fragment {
                 int petImageId = this.getResources().getIdentifier(petInfoContainer.img_dir, "drawable", context.getPackageName());
                 petImage.setImageResource(petImageId);
                 petName.setText(petInfoContainer.name);
-                petInfo.setText(petInfoContainer.flavor_text);
+                petInfo.setText(petInfoContainer.flavor_text.replace("<br>","\n"));
             }
         }
         catch(Exception e){

@@ -28,20 +28,21 @@ public class AchievementTest { //csv 파일 읽기
 
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         AssetManager assets =appContext.getAssets();
-        PetInfoCSV a = new PetInfoCSV();
-        List<PetInfoCsvFactor> b = a.getPetInfo(appContext);
-        for(PetInfoCsvFactor i : b){
+
+        PetInfoCSV petInfoCSV = new PetInfoCSV();
+        List<PetInfoCsvFactor> petInfo = petInfoCSV.getPetInfo(appContext);
+        for(PetInfoCsvFactor i : petInfo){
             Log.v("asdf", i.name);
         }
-        AchievementCSV asdf = new AchievementCSV();
-        List<AchievementCsvFactor> asd = asdf.getAchievement(appContext);
-        for(AchievementCsvFactor i : asd){
+        AchievementCSV achievementCSV = new AchievementCSV();
+        List<AchievementCsvFactor> achievement = achievementCSV.getAchievement(appContext);
+        for(AchievementCsvFactor i : achievement){
             Log.v("asdf", i.name);
         }
 
         ShopInfoCSV shop = new ShopInfoCSV();
-        List<ShopCsvFactor> t = shop.getShopCSV(appContext);
-        for(ShopCsvFactor o: t){
+        List<ShopCsvFactor> shopCSV = shop.getShopCSV(appContext);
+        for(ShopCsvFactor o: shopCSV){
             Log.v("asdf", o.name);
         }
     }

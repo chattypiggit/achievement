@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import android.content.res.AssetManager;
 
-import com.example.csv.CSVReader;
 
 import org.junit.Test;
 
@@ -17,7 +16,6 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
 
-        CSVReader a = new CSVReader();
 
     }
 }
