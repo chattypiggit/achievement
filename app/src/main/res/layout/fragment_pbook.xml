@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_row="3">
+    android:layout_row="3"
+    android:background="@color/black">
 
     <TableRow
         android:layout_width="match_parent"
@@ -43,7 +44,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/petName_1_1" />
+                android:text="@string/petName_1_1"
+                android:textColor="#fff"/>
         </LinearLayout>
 
         <LinearLayout
@@ -69,7 +71,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/petName_1_2" />
+                android:text="@string/petName_1_2"
+                android:textColor="#fff"/>
         </LinearLayout>
 
         <LinearLayout
@@ -95,7 +98,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/petName_1_3" />
+                android:text="@string/petName_1_3"
+                android:textColor="#fff"/>
         </LinearLayout>
     </TableRow>
 
@@ -127,7 +131,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/petName_2_1" />
+                android:text="@string/petName_2_1"
+                android:textColor="#fff"/>
         </LinearLayout>
 
         <LinearLayout
@@ -153,7 +158,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/petName_2_2" />
+                android:text="@string/petName_2_2"
+                android:textColor="#fff"/>
         </LinearLayout>
 
         <LinearLayout
@@ -179,7 +185,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/petName_2_3" />
+                android:text="@string/petName_2_3"
+                android:textColor="#fff"/>
         </LinearLayout>
     </TableRow>
 
