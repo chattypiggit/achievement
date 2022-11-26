@@ -24,13 +24,6 @@ public class Achievement extends Fragment {
         ImageView imageView = (ImageView) view.findViewById(R.id.ach_img1);
         TextView textView = (TextView) view.findViewById(R.id.ach_txt1);
 
-        int status = 1;
-        String testStr = "Test String";
-
-        if (status == 1){
-            imageView.setImageResource(R.drawable.test2);
-            textView.setText(testStr);
-        }
 
 
         return view;

@@ -9,7 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
     <de.hdodenhof.circleimageview.CircleImageView
         style = "@style/ach_icon"
-        android:src="@drawable/1"
+        android:src="@drawable/a1"
         android:id="@+id/ach_img1"
         android:layout_marginTop="75dp"
         android:layout_marginStart="15dp" />
@@ -17,54 +17,63 @@
     <de.hdodenhof.circleimageview.CircleImageView
         style = "@style/ach_icon"
         android:id="@+id/ach_img2"
+        android:src="@drawable/a2"
         android:layout_marginTop="75dp"
         android:layout_marginStart="145dp"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         style="@style/ach_icon"
         android:id="@+id/ach_img3"
+        android:src="@drawable/a3"
         android:layout_marginTop="75dp"
         android:layout_marginStart="275dp"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         style = "@style/ach_icon"
         android:id="@+id/ach_img4"
+        android:src="@drawable/a4"
         android:layout_marginTop="250dp"
         android:layout_marginStart="15dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         style = "@style/ach_icon"
         android:id="@+id/ach_img5"
+        android:src="@drawable/a5"
         android:layout_marginTop="250dp"
         android:layout_marginStart="145dp"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         style="@style/ach_icon"
         android:id="@+id/ach_img6"
+        android:src="@drawable/a6"
         android:layout_marginTop="250dp"
         android:layout_marginStart="275dp"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         style = "@style/ach_icon"
         android:id="@+id/ach_img7"
+        android:src="@drawable/a7"
         android:layout_marginTop="425dp"
         android:layout_marginStart="15dp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         style = "@style/ach_icon"
         android:id="@+id/ach_img8"
+        android:src="@drawable/a8"
         android:layout_marginTop="425dp"
         android:layout_marginStart="145dp"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         style="@style/ach_icon"
         android:id="@+id/ach_img9"
+        android:src="@drawable/a9"
         android:layout_marginTop="425dp"
         android:layout_marginStart="275dp"/>
 
     <TextView
         style="@style/ach_txt"
         android:id="@+id/ach_txt1"
+        android:text="출근 펀치"
         android:layout_marginStart="40dp"
         android:layout_marginTop="200dp"
      />
@@ -72,6 +81,7 @@
     <TextView
         style="@style/ach_txt"
         android:id="@+id/ach_txt2"
+        android:text="깐부"
         android:layout_marginStart="170dp"
         android:layout_marginTop="200dp"
         />
@@ -79,6 +89,7 @@
     <TextView
         style="@style/ach_txt"
         android:id="@+id/ach_txt3"
+        android:text="대부호"
         android:layout_marginStart="300dp"
         android:layout_marginTop="200dp"
         />
@@ -86,6 +97,7 @@
     <TextView
         style="@style/ach_txt"
         android:id="@+id/ach_txt4"
+        android:text="돌아온 자"
         android:layout_marginStart="40dp"
         android:layout_marginTop="375dp"
         />
@@ -93,6 +105,7 @@
     <TextView
         style="@style/ach_txt"
         android:id="@+id/ach_txt5"
+        android:text="초보 집사"
         android:layout_marginStart="170dp"
         android:layout_marginTop="375dp"
         />
@@ -100,6 +113,7 @@
     <TextView
         style="@style/ach_txt"
         android:id="@+id/ach_txt6"
+        android:text="프로 집사"
         android:layout_marginStart="300dp"
         android:layout_marginTop="375dp"
         />
@@ -107,6 +121,7 @@
     <TextView
         style="@style/ach_txt"
         android:id="@+id/ach_txt7"
+        android:text="펫 마스터"
         android:layout_marginStart="40dp"
         android:layout_marginTop="550dp"
         />
@@ -114,6 +129,7 @@
     <TextView
         style="@style/ach_txt"
         android:id="@+id/ach_txt8"
+        android:text="프로 집사2"
         android:layout_marginStart="170dp"
         android:layout_marginTop="550dp"
         />
@@ -121,6 +137,7 @@
     <TextView
         style="@style/ach_txt"
         android:id="@+id/ach_txt9"
+        android:text="프로 집사3"
         android:layout_marginStart="300dp"
         android:layout_marginTop="550dp"
         />
