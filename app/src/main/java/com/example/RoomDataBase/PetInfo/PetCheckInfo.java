@@ -15,4 +15,9 @@ public class PetCheckInfo {
     @ColumnInfo(name = "is_owned")
     public boolean is_owned;
 
+    public PetCheckInfo(int idx, boolean is_owned){
+        this.idx = idx;
+        this.is_owned = is_owned;
+    }
+
 }

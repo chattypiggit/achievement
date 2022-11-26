@@ -25,14 +25,14 @@ public class ToDoList {
 
 
 
-    public ToDoList(String content, String title, Date start_date,Date end_date){
+    public ToDoList(String title, String content, Date start_date,Date end_date){
         this.content =content;
         this.title = title;
         this.start_date = start_date;
         this.end_date = end_date;
     }
 
-    public ToDoList(String content, String title, Date start_date,Date end_date, int idx){
+    public ToDoList(String title, String content, Date start_date,Date end_date, int idx){
         this.content =content;
         this.title = title;
         this.start_date = start_date;

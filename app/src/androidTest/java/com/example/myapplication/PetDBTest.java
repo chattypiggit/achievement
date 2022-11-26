@@ -17,16 +17,19 @@ import com.example.RoomDataBase.PetInfo.PetCheckInfo;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
+public class PetDBTest {
     @Test
     public void useAppContext() {
         // Context of the app under test.
 
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         PetCheckDataBase db = PetCheckDataBase.getAppDatabase(appContext);
-        PetCheckInfo a = new PetCheckInfo();
-        a.is_owned = true;
+        
+        //0번 인덱스 펫 소유를 true로 한다. 자세한 내용은 pet_info.csv참고
+        PetCheckInfo a = new PetCheckInfo(0, true);
+        //데이터 집어넣기
         db.petInfoDao().insert(a);
+        
     }
 }
 
