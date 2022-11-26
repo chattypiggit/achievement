@@ -28,13 +28,7 @@ public class PetDBTest {
         //0번 인덱스 펫 소유를 true로 한다. 자세한 내용은 pet_info.csv참고
         PetCheckInfo a = new PetCheckInfo(0, true);
         //데이터 집어넣기
-        db.petInfoDao().insert(a);
 
-        PetCheckInfo newPet = db.petInfoDao().getByIdx(0);
-        newPet.current_exp = 20;
-        db.petInfoDao().update(newPet);
-        for(PetCheckInfo o : db.petInfoDao().get()){
-        }
         
     }
 }

@@ -11,15 +11,14 @@ import com.example.RoomDataBase.PetInfo.PetCheckDao;
 import com.example.RoomDataBase.PetInfo.PetCheckDataBase;
 import com.example.RoomDataBase.PetInfo.PetCheckInfo;
 
-@Database(entities = {ToDoList.class}, version =  2, exportSchema = false)
-@TypeConverters({TimeConverter.class})
+@Database(entities = {ToDoList.class}, version =  4, exportSchema = false)
 public abstract class ToDoListDataBase extends RoomDatabase {
     private static ToDoListDataBase Instance;
     public abstract ToDoDao toDoDao();
 
     public static ToDoListDataBase getAppDatabase(Context context){
         if(Instance == null){
-            Instance = Room.databaseBuilder(context, ToDoListDataBase.class , "todo_list").build();
+            Instance = Room.databaseBuilder(context, ToDoListDataBase.class , "todo_list").allowMainThreadQueries().build();
         }
         return  Instance;
     }
