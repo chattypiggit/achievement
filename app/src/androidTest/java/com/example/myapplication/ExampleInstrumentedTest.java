@@ -8,8 +8,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import com.example.RoomDataBase.PetInfo.PetInfo;
-import com.example.RoomDataBase.PetInfo.PetInfoDatabase;
+import com.example.RoomDataBase.PetInfo.PetCheckDataBase;
+import com.example.RoomDataBase.PetInfo.PetCheckInfo;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -23,9 +23,9 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
 
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        PetInfoDatabase db = PetInfoDatabase.getAppDatabase(appContext);
-        PetInfo a = new PetInfo();
-        a.flavor_text = "안녕";
+        PetCheckDataBase db = PetCheckDataBase.getAppDatabase(appContext);
+        PetCheckInfo a = new PetCheckInfo();
+        a.is_owned = true;
         db.petInfoDao().insert(a);
     }
 }

@@ -8,13 +8,15 @@ import android.util.Log;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import com.example.RoomDataBase.Achievement.Achievement;
-import com.example.RoomDataBase.Achievement.AchievementDataBase;
-import com.example.RoomDataBase.PetInfo.PetInfo;
-import com.example.RoomDataBase.PetInfo.PetInfoDatabase;
+import com.example.RoomDataBase.Achievement.AchievementCheck;
+import com.example.RoomDataBase.Achievement.AchievementCheckDataBase;
+import com.example.RoomDataBase.ToDoList.ToDoList;
+import com.example.RoomDataBase.ToDoList.ToDoListDataBase;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.util.Date;
 
 @RunWith(AndroidJUnit4.class)
 public class DBTest {
@@ -22,11 +24,14 @@ public class DBTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        AchievementDataBase db = AchievementDataBase.getAppDatabase(appContext);
-        Achievement a = new Achievement("로그인 100번", false,"ㅇㅅㅇ", null,null);
-        db.AchievementDao().insert(a);
-        Achievement c = db.AchievementDao().get("asfd");
-        db.AchievementDao().update("로그인 100번", true);
-        Log.v("test", db.AchievementDao().get("로그인 100번").is_acquired ? "t" : "f"  );
+        ToDoListDataBase todoList = ToDoListDataBase.getAppDatabase(appContext);
+        ToDoList a = new ToDoList("시러","시러",new Date(0),new Date(1));
+        a.idx = 2;
+
+        todoList.toDoDao().update(a);
+        for(ToDoList asdf : todoList.toDoDao().get()){
+            Log.v("asdf",asdf.toString());
+        }
+
     }
 }

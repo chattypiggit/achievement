@@ -6,16 +6,15 @@ import androidx.room.TypeConverter;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class TimeConverter {
     @TypeConverter
-    public String toString(long timestamp){
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat originalFormat = new SimpleDateFormat("yyyyMMdd HH:mm:ss");
-        return originalFormat.format(timestamp);
+    public Date toString(long timestamp){
+        return new Date(timestamp);
     }
     @TypeConverter
-    public long toTimeStamp(String date){
-        Timestamp timestamp = Timestamp.valueOf(date);
-        return timestamp.getTime();
+    public static Long dateToTimestamp(Date date) {
+        return date == null ? null : date.getTime();
     }
 }
