@@ -2,12 +2,14 @@ package com.example.csv;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.util.Log;
 
 import com.example.csv.factor.AchievementCsvFactor;
 import com.opencsv.exceptions.CsvException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class AchievementCSV {

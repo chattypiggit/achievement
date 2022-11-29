@@ -9,9 +9,14 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import com.example.RoomDataBase.Achievement.AchievementCheck;
+import com.example.RoomDataBase.Achievement.AchievementCheckDataBase;
 import com.example.RoomDataBase.PetInfo.PetCheckDataBase;
 import com.example.RoomDataBase.PetInfo.PetCheckInfo;
+import com.example.myapplication.helper.AchievementHelper;
 import com.example.myapplication.helper.UserInfoHelper;
+
+import java.util.List;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -25,15 +30,19 @@ public class PetDBTest {
         // Context of the app under test.
 
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        PetCheckDataBase db = PetCheckDataBase.getAppDatabase(appContext);
-        UserInfoHelper user_helper = new UserInfoHelper(appContext);
-
-        user_helper.addLoginCount();
-
-        Log.v("asdf", Integer.toString(user_helper.getLoginCount()));
+        AchievementHelper helper= new AchievementHelper(appContext);
 
 
-        
+        AchievementHelper a = new AchievementHelper(appContext);
+        a.setOwnByIdx(1,true);
+        List<AchievementCheck> ss = AchievementCheckDataBase.getAppDatabase(appContext).AchievementDao().get();
+        for(AchievementCheck i : ss){
+            Log.v("asdf", Integer.toString(i.idx));
+        }
+
+        Log.v("asdf", String.valueOf(helper.isAcquired(2)));
+
+
     }
 }
 

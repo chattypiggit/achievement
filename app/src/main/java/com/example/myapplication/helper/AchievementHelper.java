@@ -1,6 +1,7 @@
 package com.example.myapplication.helper;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.RoomDataBase.Achievement.AchievementCheck;
 import com.example.RoomDataBase.Achievement.AchievementCheckDao;
@@ -10,11 +11,11 @@ public class AchievementHelper {
     AchievementCheckDao achievementCheckDao;
 
     public AchievementHelper(Context context){
-        AchievementCheckDao achievementCheckDao =  AchievementCheckDataBase.getAppDatabase(context).AchievementDao();
+         this.achievementCheckDao =  AchievementCheckDataBase.getAppDatabase(context).AchievementDao();
     }
 
     public boolean isAcquired(int idx){
-        return achievementCheckDao.getByIdx(idx) == null;
+        return achievementCheckDao.getByIdx(idx) != null;
     }
 
     public void setOwnByIdx(int idx, boolean owned){

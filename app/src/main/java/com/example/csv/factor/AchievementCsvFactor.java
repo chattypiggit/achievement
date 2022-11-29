@@ -1,5 +1,7 @@
 package com.example.csv.factor;
 
+import android.util.Log;
+
 public class AchievementCsvFactor {
     public int idx = -1;
     public String name ="";
