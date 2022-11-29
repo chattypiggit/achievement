@@ -43,8 +43,8 @@
         style="@style/ach_txt"
         android:id="@+id/License"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="500dp"
-        android:text="- License -\nOpenCsv(Apache2)\nCompactCalenderView(MIT)"
+        android:layout_marginTop="550dp"
+        android:text="OpenCsv(Apache2)\nCompactCalenderView(MIT)"
         android:textSize="25dp"
         />
 </FrameLayout>
