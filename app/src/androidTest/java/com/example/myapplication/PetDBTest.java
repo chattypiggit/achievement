@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -10,6 +11,7 @@ import org.junit.runner.RunWith;
 
 import com.example.RoomDataBase.PetInfo.PetCheckDataBase;
 import com.example.RoomDataBase.PetInfo.PetCheckInfo;
+import com.example.myapplication.helper.UserInfoHelper;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -24,17 +26,13 @@ public class PetDBTest {
 
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         PetCheckDataBase db = PetCheckDataBase.getAppDatabase(appContext);
-        
-        //0번 인덱스 펫 소유를 true로 한다. 자세한 내용은 pet_info.csv참고
-        PetCheckInfo a = new PetCheckInfo(0, true);
-        //데이터 집어넣기
-        db.petInfoDao().insert(a);
+        UserInfoHelper user_helper = new UserInfoHelper(appContext);
 
-        PetCheckInfo newPet = db.petInfoDao().getByIdx(0);
-        newPet.current_exp = 20;
-        db.petInfoDao().update(newPet);
-        for(PetCheckInfo o : db.petInfoDao().get()){
-        }
+        user_helper.addLoginCount();
+
+        Log.v("asdf", Integer.toString(user_helper.getLoginCount()));
+
+
         
     }
 }
