@@ -153,7 +153,7 @@ public class Calender extends Fragment {
                                             // 확인 클릭 시 실행할 거 작성
                                             List<Event> remEv = compactCalendarView.getEvents(dateClicked);
                                             toDoListDataBase.toDoDao().delete(toDoList.get(0));
-                                            remEv.remove(1);
+                                            remEv.remove(0);
                                             textView_tmpList1.setText("Empty");
                                             Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
 
@@ -213,8 +213,8 @@ public class Calender extends Fragment {
                     }
                 });
 
-                textView_tmpList3.setOnClickListener(new View.OnClickListener() {
-                    @Override
+                    textView_tmpList3.setOnClickListener(new View.OnClickListener() {
+                        @Override
                     public void onClick(View v) {
 
                         if(textView_tmpList3.getText().toString().equals("Empty")){
@@ -248,7 +248,7 @@ public class Calender extends Fragment {
                                             // 확인 클릭 시 실행할 거 작성
                                             List<Event> remEv = compactCalendarView.getEvents(dateClicked);
                                             toDoListDataBase.toDoDao().delete(toDoList.get(2));
-                                            remEv.remove(1);
+                                            remEv.remove(2);
                                             textView_tmpList3.setText("Empty");
                                             Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
 
