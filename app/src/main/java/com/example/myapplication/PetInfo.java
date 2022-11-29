@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -18,6 +19,8 @@ import com.example.csv.PetInfoCSV;
 import com.example.csv.factor.PetInfoCsvFactor;
 
 import java.util.List;
+import java.util.Vector;
+import java.util.prefs.Preferences;
 
 public class PetInfo extends Fragment {
 
@@ -55,6 +58,21 @@ public class PetInfo extends Fragment {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                 PetBook petBook = new PetBook();
                 transaction.replace(R.id.home_ly, petBook);
+                transaction.commit();
+            }
+        });
+
+        Button chBtn = view.findViewById(R.id.button);
+        chBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int index = getArguments().getInt("INDEX", 1)-1;
+                Bundle bundle = new Bundle(); // 번들을 통해 값 전달
+                bundle.putInt("value", index);//번들에 넘길 값 저장
+                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+                Calender fragment2 = new Calender();//프래그먼트2 선언
+                fragment2.setArguments(bundle);//번들을 프래그먼트2로 보낼 준비
+                transaction.replace(R.id.home_ly, fragment2);
                 transaction.commit();
             }
         });

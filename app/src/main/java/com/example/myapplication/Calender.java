@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,6 +59,8 @@ public class Calender extends Fragment {
     private SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("yyyy년 MM월", Locale.KOREA);
     private SimpleDateFormat dateFormatForMonth2 = new SimpleDateFormat("yyyy-MM", Locale.KOREA);
     private final SimpleDateFormat dbFormat = new SimpleDateFormat("yyyyMMdd",Locale.KOREA);
+    private ImageView img;
+    private int value;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -66,10 +69,37 @@ public class Calender extends Fragment {
         return inflater.inflate(R.layout.fragment_cal, container, false);
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        img = getActivity().findViewById(R.id.petImage);
+
+        if (getArguments() != null) {
+            value = getArguments().getInt("value"); // 프래그먼트1에서 받아온 값 넣기
+            if( value == 1){
+                img.setImageResource(R.drawable.pet_1_1);
+            }else if( value == 2){
+                img.setImageResource(R.drawable.pet_1_2);
+            }else if( value == 3){
+                img.setImageResource(R.drawable.pet_1_3);
+            }else if( value == 4){
+                img.setImageResource(R.drawable.pet_2_1);
+            }else if( value == 5){
+                img.setImageResource(R.drawable.pet_2_2);
+            }else {
+                img.setImageResource(R.drawable.pet_2_3);
+            }
+        }
+
+    }
+
     //fragment에서 findviewbyid를 사용하기 위해 선언
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
 
         CompactCalendarView compactCalendarView = (CompactCalendarView) view.findViewById(R.id.compactcalendar_view);
 
@@ -89,6 +119,7 @@ public class Calender extends Fragment {
                 e.printStackTrace();
             }
         }
+
         // 날짜 클릭 이벤트 관련 코드
         compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
@@ -329,7 +360,7 @@ public class Calender extends Fragment {
             }
         });
 
-
     }
+
 }
 
