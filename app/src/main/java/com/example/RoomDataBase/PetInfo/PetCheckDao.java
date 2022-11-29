@@ -14,13 +14,11 @@ import java.util.List;
 public interface PetCheckDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE	)
     void insert(PetCheckInfo petInfo);
-    @Query("UPDATE PetCheckInfo SET is_owned = :is_owned, current_exp = :current_exp WHERE idx = :idx")
-    void update(int idx, boolean is_owned, int current_exp);
-    @Update
-    void update(PetCheckInfo petCheckInfo);
+
     @Query("SELECT * FROM PetCheckInfo")
     List<PetCheckInfo> get();
 
     @Query("SELECT * FROM PetCheckInfo WHERE idx = :idx")
     PetCheckInfo getByIdx(int idx);
+
 }
