@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.RoomDataBase.ToDoList.ToDoList;
 import com.example.RoomDataBase.ToDoList.ToDoListDataBase;
+import com.example.myapplication.helper.PetHelper;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
 
 import java.util.Locale;
@@ -100,7 +102,6 @@ public class Calender extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-
         CompactCalendarView compactCalendarView = (CompactCalendarView) view.findViewById(R.id.compactcalendar_view);
 
         TextView textView_month = (TextView) view.findViewById(R.id.textView_month);
@@ -148,7 +149,7 @@ public class Calender extends Fragment {
                                             remEv.remove(0);
                                             textView_tmpList1.setText("Empty");
 
-                                            Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getActivity(), "100exp를 얻었습니다", Toast.LENGTH_SHORT).show();
 
                                         }
                                     })
@@ -196,7 +197,8 @@ public class Calender extends Fragment {
                                             remEv.remove(1);
                                             toDoListDataBase.toDoDao().delete(toDoList.get(1));
                                             textView_tmpList2.setText("Empty");
-                                            Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+
+                                            Toast.makeText(getActivity(), "100exp를 얻었습니다", Toast.LENGTH_SHORT).show();
 
                                         }
                                     })
@@ -243,7 +245,8 @@ public class Calender extends Fragment {
                                             toDoListDataBase.toDoDao().delete(toDoList.get(2));
                                             remEv.remove(2);
                                             textView_tmpList3.setText("Empty");
-                                            Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+
+                                            Toast.makeText(getActivity(), "100exp를 얻었습니다", Toast.LENGTH_SHORT).show();
 
                                         }
                                     })
