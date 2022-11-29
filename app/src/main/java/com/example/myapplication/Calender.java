@@ -97,26 +97,7 @@ public class Calender extends Fragment {
 
                 List<ToDoList> toDoList = toDoListDataBase.toDoDao().getByDate(dbFormat.format(dateClicked));
                 //날짜 호출시 내용 표시
-                if(toDoList.size() == 1){
-                    textView_tmpList1.setText(toDoList.get(0).content);
-                    textView_tmpList2.setText("Empty");
-                    textView_tmpList3.setText("Empty");
-                }
-                else if(events.size() == 2){
-                    textView_tmpList1.setText(toDoList.get(0).content);
-                    textView_tmpList2.setText(toDoList.get(1).content);
-                    textView_tmpList3.setText("Empty");
-                }
-                else if(events.size() == 3){
-                    textView_tmpList1.setText(toDoList.get(0).content);
-                    textView_tmpList2.setText(toDoList.get(1).content);
-                    textView_tmpList3.setText(toDoList.get(2).content);
-                }
-                else {
-                    textView_tmpList1.setText("Empty");
-                    textView_tmpList2.setText("Empty");
-                    textView_tmpList3.setText("Empty");
-                }
+                showList(toDoList);
                 textView_tmpList1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -299,13 +280,7 @@ public class Calender extends Fragment {
                                             Event ev1 = new Event(Color.GREEN, currentLong, editText.getText().toString());
                                             compactCalendarView.addEvent(ev1);
 
-                                            if (cntEvents.size() == 0) {
-                                                textView_tmpList1.setText(editText.getText().toString());
-                                            } else if (cntEvents.size() == 2) {
-                                                textView_tmpList2.setText(editText.getText().toString());
-                                            } else{
-                                                textView_tmpList3.setText(editText.getText().toString());
-                                            }
+                                            showList(toDoList);
 
                                             Toast.makeText(getActivity(), "일정이 저장되었습니다.", Toast.LENGTH_SHORT).show();
                                         }
@@ -328,6 +303,29 @@ public class Calender extends Fragment {
             public void onMonthScroll(Date firstDayOfNewMonth) {
                 textView_month.setText(dateFormatForMonth.format(firstDayOfNewMonth));
 
+            }
+
+            public void showList(List<ToDoList> toDoList){
+                if(toDoList.size() == 1){
+                    textView_tmpList1.setText(toDoList.get(0).content);
+                    textView_tmpList2.setText("Empty");
+                    textView_tmpList3.setText("Empty");
+                }
+                else if(toDoList.size() == 2){
+                    textView_tmpList1.setText(toDoList.get(0).content);
+                    textView_tmpList2.setText(toDoList.get(1).content);
+                    textView_tmpList3.setText("Empty");
+                }
+                else if(toDoList.size() == 3){
+                    textView_tmpList1.setText(toDoList.get(0).content);
+                    textView_tmpList2.setText(toDoList.get(1).content);
+                    textView_tmpList3.setText(toDoList.get(2).content);
+                }
+                else {
+                    textView_tmpList1.setText("Empty");
+                    textView_tmpList2.setText("Empty");
+                    textView_tmpList3.setText("Empty");
+                }
             }
         });
 
