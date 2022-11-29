@@ -2,8 +2,10 @@ package com.example.RoomDataBase.ToDoList;
 
 import android.annotation.SuppressLint;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.text.ParseException;
@@ -12,6 +14,7 @@ import java.util.Date;
 
 @Entity
 public class ToDoList {
+    @NonNull
     @PrimaryKey(autoGenerate = true)
     public int idx;
 
@@ -19,20 +22,18 @@ public class ToDoList {
     public String content;
 
     @ColumnInfo(name = "date")
-    public Date date;
+    public String date;
 
-
-
-    public ToDoList(String content, String dateText) throws ParseException {
+    public ToDoList(String content, String date) {
         this.content =content;
-        String DEFAULT_PATTERN = "yyyy-MM-dd";
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat format = new SimpleDateFormat(DEFAULT_PATTERN);
-        this.date = format.parse(dateText);
+        this.date = date;
     }
 
+    @Ignore
     public ToDoList(String content, Date date){
         this.content = content;
-        this.date = date;
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+        this.date = simpleDateFormat.format(date);
     }
 
     @Override
