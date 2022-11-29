@@ -57,7 +57,7 @@ public class Calender extends Fragment {
     private SimpleDateFormat dateFormatForDisplaying = new SimpleDateFormat("yyyy-MM-dd", Locale.KOREA);
     private SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("yyyy년 MM월", Locale.KOREA);
     private SimpleDateFormat dateFormatForMonth2 = new SimpleDateFormat("yyyy-MM", Locale.KOREA);
-    private final SimpleDateFormat dbFormat = new SimpleDateFormat("yyyyMMdd");
+    private final SimpleDateFormat dbFormat = new SimpleDateFormat("yyyy-MM-dd",Locale.KOREA);
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -78,35 +78,40 @@ public class Calender extends Fragment {
         TextView textView_tmpList1 = (TextView) view.findViewById(R.id.textview_tmpList1);
         TextView textView_tmpList2 = (TextView) view.findViewById(R.id.textview_tmpList2);
         TextView textView_tmpList3 = (TextView) view.findViewById(R.id.textview_tmpList3);
-
-
         textView_month.setText(dateFormatForMonth.format(compactCalendarView.getFirstDayOfCurrentMonth()));
         compactCalendarView.setFirstDayOfWeek(Calendar.MONDAY);
         ToDoListDataBase toDoListDataBase = ToDoListDataBase.getAppDatabase(getContext());
+        for(ToDoList i : toDoListDataBase.toDoDao().get()){
+            try {
+                Event event = new Event(Color.GREEN, dbFormat.parse(i.date).getTime() , i.content);
+                compactCalendarView.addEvent(event);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
         // 날짜 클릭 이벤트 관련 코드
+        List<ToDoList>toDoLists = toDoListDataBase.toDoDao().get();
         compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
                 List<Event> events = compactCalendarView.getEvents(dateClicked);
 
-                List<ToDoList> toDoLists =toDoListDataBase.toDoDao().getByDate(dbFormat.format(dateClicked));
-
 
                 //날짜 호출시 내용 표시
                 if(events.size() == 1){
-                    textView_tmpList1.setText(toDoLists.get(0).content);
+                    textView_tmpList1.setText(events.get(0).getData().toString());
                     textView_tmpList2.setText("Empty");
                     textView_tmpList3.setText("Empty");
                 }
                 else if(events.size() == 2){
-                    textView_tmpList1.setText(toDoLists.get(0).content);
-                    textView_tmpList2.setText(toDoLists.get(1).content);
+                    textView_tmpList1.setText(events.get(0).getData().toString());
+                    textView_tmpList2.setText(events.get(1).getData().toString());
                     textView_tmpList3.setText("Empty");
                 }
                 else if(events.size() == 3){
-                    textView_tmpList1.setText(toDoLists.get(0).content);
-                    textView_tmpList2.setText(toDoLists.get(1).content);
-                    textView_tmpList3.setText(toDoLists.get(2).content);
+                    textView_tmpList1.setText(events.get(0).getData().toString());
+                    textView_tmpList2.setText(events.get(1).getData().toString());
+                    textView_tmpList3.setText(events.get(2).getData().toString());
                 }
                 else {
                     textView_tmpList1.setText("Empty");
@@ -291,10 +296,9 @@ public class Calender extends Fragment {
                                                 e.printStackTrace();
                                             }
                                             Long currentLong = currentDay.getTime();
-                                            toDoListDataBase.toDoDao().insert(new ToDoList(editText.getText().toString(),currentDay));
+                                            toDoListDataBase.toDoDao().insert(new ToDoList(editText.getText().toString(),dbFormat.format(currentDay)));
                                             Event ev1 = new Event(Color.GREEN, currentLong, editText.getText().toString());
                                             compactCalendarView.addEvent(ev1);
-
                                             if (cntEvents.size() == 0) {
                                                 textView_tmpList1.setText(editText.getText().toString());
                                             } else if (cntEvents.size() == 2) {
