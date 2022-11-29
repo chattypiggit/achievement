@@ -13,7 +13,7 @@ public class AchievementHelper {
         AchievementCheckDao achievementCheckDao =  AchievementCheckDataBase.getAppDatabase(context).AchievementDao();
     }
 
-    public boolean isOwnedByIdx(int idx){
+    public boolean isAcquired(int idx){
         return achievementCheckDao.getByIdx(idx) == null;
     }
 

@@ -12,7 +12,7 @@ public abstract class AchievementCheckDataBase extends RoomDatabase {
     public abstract AchievementCheckDao AchievementDao();
     public static AchievementCheckDataBase getAppDatabase(Context context){
         if(Instance == null){
-            Instance = Room.databaseBuilder(context, AchievementCheckDataBase.class , "achievement_check")
+            Instance = Room.databaseBuilder(context, AchievementCheckDataBase.class , "achievement_check").allowMainThreadQueries()
                     .build();
         }
         return  Instance;

@@ -17,6 +17,12 @@ public class PetHelper {
         return petCheckDao.getByIdx(idx) == null;
     }
 
+    public int  getExpByIdx(int idx){
+        if(isOwnedByIdx(idx)){
+            return -1;
+        }
+        return petCheckDao.getByIdx(idx).current_exp;
+    }
     public void setOwnByIdx(int idx, boolean owned){
         PetCheckInfo a = new PetCheckInfo(idx,owned);
         petCheckDao.insert(a);
