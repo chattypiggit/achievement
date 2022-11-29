@@ -14,7 +14,7 @@ public abstract class PetCheckDataBase extends RoomDatabase {
 
     public static PetCheckDataBase getAppDatabase(Context context){
         if(Instance == null){
-            Instance = Room.databaseBuilder(context, PetCheckDataBase.class , "pet_check").build();
+            Instance = Room.databaseBuilder(context, PetCheckDataBase.class , "pet_check").allowMainThreadQueries().build();
         }
         return  Instance;
     }
