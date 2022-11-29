@@ -90,7 +90,6 @@ public class Calender extends Fragment {
             }
         }
         // 날짜 클릭 이벤트 관련 코드
-        List<ToDoList>toDoLists = toDoListDataBase.toDoDao().get();
         compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
             @Override
             public void onDayClick(Date dateClicked) {
@@ -133,7 +132,7 @@ public class Calender extends Fragment {
                                         public void onClick(DialogInterface dialog, int which) {
                                             // 확인 클릭 시 실행할 거 작성
                                             List<Event> remEv = compactCalendarView.getEvents(dateClicked);
-                                            toDoListDataBase.toDoDao().delete(toDoLists.get(0));
+                                            toDoListDataBase.toDoDao().delete(toDoList.get(0));
                                             remEv.remove(0);
                                             textView_tmpList1.setText("Empty");
 
@@ -153,7 +152,7 @@ public class Calender extends Fragment {
                                         public void onClick(DialogInterface dialog, int which) {
                                             // 확인 클릭 시 실행할 거 작성
                                             List<Event> remEv = compactCalendarView.getEvents(dateClicked);
-                                            toDoListDataBase.toDoDao().delete(toDoLists.get(0));
+                                            toDoListDataBase.toDoDao().delete(toDoList.get(0));
                                             remEv.remove(1);
                                             textView_tmpList1.setText("Empty");
                                             Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
@@ -183,7 +182,7 @@ public class Calender extends Fragment {
                                             List<Event> remEv = compactCalendarView.getEvents(dateClicked);
 
                                             remEv.remove(1);
-                                            toDoListDataBase.toDoDao().delete(toDoLists.get(1));
+                                            toDoListDataBase.toDoDao().delete(toDoList.get(1));
                                             textView_tmpList2.setText("Empty");
                                             Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
 
@@ -201,7 +200,7 @@ public class Calender extends Fragment {
                                         public void onClick(DialogInterface dialog, int which) {
                                             // 확인 클릭 시 실행할 거 작성
                                             List<Event> remEv = compactCalendarView.getEvents(dateClicked);
-                                            toDoListDataBase.toDoDao().delete(toDoLists.get(1));
+                                            toDoListDataBase.toDoDao().delete(toDoList.get(1));
                                             remEv.remove(1);
                                             textView_tmpList2.setText("Empty");
                                             Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
@@ -229,7 +228,7 @@ public class Calender extends Fragment {
                                         public void onClick(DialogInterface dialog, int which) {
                                             // 확인 클릭 시 실행할 거 작성
                                             List<Event> remEv = compactCalendarView.getEvents(dateClicked);
-                                            toDoListDataBase.toDoDao().delete(toDoLists.get(2));
+                                            toDoListDataBase.toDoDao().delete(toDoList.get(2));
                                             remEv.remove(2);
                                             textView_tmpList3.setText("Empty");
                                             Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
@@ -248,7 +247,7 @@ public class Calender extends Fragment {
                                         public void onClick(DialogInterface dialog, int which) {
                                             // 확인 클릭 시 실행할 거 작성
                                             List<Event> remEv = compactCalendarView.getEvents(dateClicked);
-                                            toDoListDataBase.toDoDao().delete(toDoLists.get(2));
+                                            toDoListDataBase.toDoDao().delete(toDoList.get(2));
                                             remEv.remove(1);
                                             textView_tmpList3.setText("Empty");
                                             Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
