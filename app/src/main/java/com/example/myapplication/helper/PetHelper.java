@@ -17,17 +17,17 @@ public class PetHelper {
         return petCheckDao.getByIdx(idx) == null;
     }
 
-    public void setOwn(int idx, boolean owned){
+    public void setOwnByIdx(int idx, boolean owned){
         PetCheckInfo a = new PetCheckInfo(idx,owned);
         petCheckDao.insert(a);
     }
 
-    public void setExp(int idx, int exp){
+    public void setExpByIdx(int idx, int exp){
         PetCheckInfo a = new PetCheckInfo(idx,true,exp);
         petCheckDao.insert(a);
     }
 
-    public void addExp(int idx, int exp){
+    public void addExpByIdx(int idx, int exp){
         PetCheckInfo a = petCheckDao.getByIdx(idx);
         if(a ==null){
             a = new PetCheckInfo(idx,true, exp);
