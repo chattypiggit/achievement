@@ -38,4 +38,13 @@
         android:text="팀원 : 2019706083 정영은"
         android:textSize="30dp"
         />
+
+    <TextView
+        style="@style/ach_txt"
+        android:id="@+id/License"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="500dp"
+        android:text="- License -\nOpenCsv(Apache2)\nCompactCalenderView(MIT)"
+        android:textSize="25dp"
+        />
 </FrameLayout>
