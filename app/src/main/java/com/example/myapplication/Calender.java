@@ -123,7 +123,7 @@ public class Calender extends Fragment {
                         else {
                             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                             AlertDialog dialog = builder.setTitle("일정을 삭제하겠습니까?")
-                                    .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                    .setPositiveButton("완료", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             // 확인 클릭 시 실행할 거 작성
@@ -141,6 +141,18 @@ public class Calender extends Fragment {
                                         public void onClick(DialogInterface dialog, int which) {
                                             // 취소 클릭 시 실행할 거 작성
                                             Toast.makeText(getActivity(), "일정삭제가 취소되었습니다..", Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                                    .setNeutralButton("그냥 삭제", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            // 확인 클릭 시 실행할 거 작성
+                                            List<Event> remEv = compactCalendarView.getEvents(dateClicked);
+                                            toDoListDataBase.toDoDao().delete(toDoLists.get(0));
+                                            remEv.remove(1);
+                                            textView_tmpList1.setText("Empty");
+                                            Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+
                                         }
                                     })
                                     .create();
@@ -224,6 +236,18 @@ public class Calender extends Fragment {
                                         public void onClick(DialogInterface dialog, int which) {
                                             // 취소 클릭 시 실행할 거 작성
                                             Toast.makeText(getActivity(), "일정삭제가 취소되었습니다..", Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                                    .setNeutralButton("그냥 삭제", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            // 확인 클릭 시 실행할 거 작성
+                                            List<Event> remEv = compactCalendarView.getEvents(dateClicked);
+                                            toDoListDataBase.toDoDao().delete(toDoLists.get(2));
+                                            remEv.remove(1);
+                                            textView_tmpList3.setText("Empty");
+                                            Toast.makeText(getActivity(), "일정이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+
                                         }
                                     })
                                     .create();
